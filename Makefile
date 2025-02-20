@@ -103,7 +103,8 @@ format-delta:
 # DuckDB Targets
 # ========================
 duckdb-fast: $(DUCKDB_LIB)
-	install -C $< $(BUILD_DIR)/libduckdb.so
+	install -C $< $(BUILD_DIR)/pg_mooncake_duckdb.so
+	patchelf --set-soname pg_mooncake_duckdb.so $(BUILD_DIR)/pg_mooncake_duckdb.so
 
 duckdb: | .BUILD
 	BUILD_EXTENSIONS="httpfs;icu;json" \

@@ -6,6 +6,7 @@ RUN apt update \
     g++ \
     liblz4-dev \
     cmake \
+    patchelf \
     postgresql-server-dev-17 \
  && rm -rf /var/lib/apt/lists/*
 
